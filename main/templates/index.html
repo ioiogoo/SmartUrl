@@ -1,14 +1,59 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your SmartUrl</title>
+    <title>SmartUrl</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+    <script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/index.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.13/clipboard.min.js"></script>
 </head>
 <body>
-    <form action="/", method="POST">
-        <input type="text" name="longurl">
-        <input type="submit" value="submite">
-        {% csrf_token %}
-    </form>
+    <!-- 导航开始 -->
+    <div id="header">
+        <span class="glyphicon glyphicon-search"></span>
+        <a href="#">Login</a>
+    </div>
+    <!-- 导航结束 -->
+    <!-- 正文容器开始 -->
+    <div id="content" class="row">
+        <div id="url" class="col-md-6 col-md-offset-3">
+            0ooo0.cn
+        </div>
+        <div id="info" class="col-md-6 col-md-offset-3">
+            短链接平台
+        </div>
+        <!-- 输入框开始 -->
+            <form action="/", method="POST" class="col-md-6 col-md-offset-3">
+                <div class="input-group">
+                    <input type='text' class='form-control' name='longurl' placeholder="请输入网址如：http://xxx.xxx">
+                    <span class="input-group-btn">
+                        <input class='btn btn-primary' type='submit' value='点击变短 »' >
+                    </span>
+                </div>
+                {% csrf_token %}
+            </form>
+        <!-- 输入框结束 -->
+        <!-- 结果信息开始 -->
+        {% if Surl %}
+        <hr class="col-md-8 col-md-offset-2">
+        <div id="result_warp" class="col-md-6 col-md-offset-3">
+            <div id="result_status">Success!</div>
+            <!-- 结果框 -->
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <a class='btn btn-primary btn-copy' data-clipboard-text="{{Surl}}">复制</a>
+                </span>
+                <input class='form-control' type='text' value="{{Surl}}" />
+            </div>
+            <div id="result_text">原链接：{{Lurl}}</div>
+        </div>
+        {% endif%}
+    </div>
+    <!-- 正文结束 -->
+<script src='{% static '/index.js' %}'></script>
 </body>
 </html>
