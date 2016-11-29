@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your SmartUrl</title>
+</head>
+<body>
+    <form action="/", method="POST">
+        <input type="text" name="longurl">
+        <input type="submit" value="submite">
+        {% csrf_token %}
+    </form>
+</body>
+</html>
