@@ -14,32 +14,14 @@
 <body>
     <!-- 导航开始 -->
     <div id="header">
-        <span class="glyphicon glyphicon-search"></span>
-        <a href="#">Login</a>
+        <a href="/" id='span'><span class="glyphicon glyphicon-search"></span></a>
+        <a href="/admin">Login</a>
     </div>
     <!-- 导航结束 -->
     <!-- 正文容器开始 -->
     <div id="content" class="row">
-        <div id="url" class="col-md-6 col-md-offset-3">
-            0ooo0.cn
-        </div>
-        <div id="info" class="col-md-6 col-md-offset-3">
-            短链接平台
-        </div>
-        <!-- 输入框开始 -->
-            <form action="/", method="POST" class="col-md-6 col-md-offset-3">
-                <div class="input-group">
-                    <input type='text' class='form-control' name='longurl' placeholder="请输入网址如：http://xxx.xxx">
-                    <span class="input-group-btn">
-                        <input class='btn btn-primary' type='submit' value='点击变短 »' >
-                    </span>
-                </div>
-                {% csrf_token %}
-            </form>
-        <!-- 输入框结束 -->
-        <!-- 结果信息开始 -->
         {% if Surl %}
-        <hr class="col-md-8 col-md-offset-2">
+        <!-- 转换结果 -->
         <div id="result_warp" class="col-md-6 col-md-offset-3">
             <div id="result_status">Success!</div>
             <!-- 结果框 -->
@@ -51,7 +33,28 @@
             </div>
             <div id="result_text">原链接：{{Lurl}}</div>
         </div>
+        <hr class="col-md-8 col-md-offset-2">
+        <!-- 转换结果结束，下面是主页信息 -->
         {% endif%}
+
+
+        <div id="url" class="col-md-6 col-md-offset-3">
+            0ooo0.cn
+        </div>
+        <div id="info" class="col-md-6 col-md-offset-3">
+            短链接平台
+        </div>
+        <!-- 输入框开始 -->
+            <form action="/", method="POST" class="col-md-6 col-md-offset-3" name='myform'>
+                <div class="input-group">
+                    <input type='text' class='form-control' name='longurl' placeholder="请输入网址如：http://xxx.xxx">
+                    <span class="input-group-btn">
+                        <input class='btn btn-primary' type='button' value='点击变短 »' onclick="check(this.form)">
+                    </span>
+                </div>
+                {% csrf_token %}
+            </form>
+        <!-- 输入框结束 -->
     </div>
     <!-- 正文结束 -->
 <script src='{% static '/index.js' %}'></script>

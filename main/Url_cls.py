@@ -18,13 +18,16 @@ class Url_c(object):
         '''Lurl convert to Surl'''
         if not Lurl:raise Exception('Input your Lurl')
         url = Url(Lurl=Lurl)
-        url.save()
-        id_ = url.id
-        Surl = cls.domain + cls.to62(id_ + 10240)
-        # insert Surl
-        url.Surl = Surl
-        url.save()
-        return Surl
+        try:
+            url.save()
+            id_ = url.id
+            Surl = cls.domain + cls.to62(id_ + 10240)
+            # insert Surl
+            url.Surl = Surl
+            url.save()
+            return Surl
+        except:
+            return Url.objects.filter(Lurl=Lurl)[0].Surl
 
     @classmethod
     def S2L_url(cls, Surl=None):

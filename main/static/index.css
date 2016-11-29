@@ -2,7 +2,7 @@ body {
     background-image:url('/static/background.jpg');
     background-size:100%;
     background-repeat: no-repeat;
-    font-family: 微软雅黑
+    font-family: 微软雅黑细体
 }
 
 #content {
@@ -19,9 +19,9 @@ body {
 #info {
     color: #ffffff;
     text-align: center;
-    font-size: 20px;
+    font-size: 22px;
     margin-top: -3px;
-    margin-bottom: 22px
+    margin-bottom: 16px
 }
 
 #header {
@@ -32,13 +32,14 @@ body {
 
 #header a {
     font-size: 20px;
-    color: #544F58;
+    color: #D6D0D0;
     position: relative;
     left: 77%;
 }
 
-#header span {
+#header #span {
     left: 20%;
+    color: #D6D0D0
 }
 
 #result_warp {
