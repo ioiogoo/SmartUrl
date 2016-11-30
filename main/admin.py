@@ -1,0 +1,10 @@
+from django.contrib import admin
+
+# Register your models here.
+from models import Url
+
+class UrlAdmin(admin.ModelAdmin):
+    list_display = ('id','Lurl','Surl', 'Date')
+    search_fields = ('id','Lurl','Surl', 'Date')
+
+admin.site.register(Url, UrlAdmin)
