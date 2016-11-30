@@ -6,7 +6,7 @@ from models import Url
 class Url_c(object):
     """Convert between Lurl and Surl"""
     baseindex = 'tTcRvia5q7QZhFzoulCK06Xn4DNxMEgGSHIY1k3bLyOsUepV29PfW8wmBgrdAG'
-    domain = 'http://0ooo0.cn/'
+    domain = 'https://0ooo0.cn/'
     def __init__(self, Lurl=None, Surl=None):
         if Lurl:
             self.Lurl = Lurl
