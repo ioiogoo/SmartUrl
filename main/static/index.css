@@ -28,11 +28,13 @@ body {
     width: 80%;
     margin: 0 auto;
     margin-top: 80px;
+    font-family: "Helvetica Neue";
+    font-weight: bold;
 }
 
 #header a {
     font-size: 20px;
-    color: #D6D0D0;
+    color: rgba(175,170,170,0.75);
     position: relative;
     left: 77%;
 }
