@@ -1,8 +1,18 @@
+@media screen and (max-width: 985px) {
+    body {background-image:url('/static/moblie_bcak.jpg');
+            background-size:100%;}
+}
+
+
+@media screen and (min-width: 985px) {
+   body {background-image:url('/static/background.jpg');
+            background-size:100%;}
+}
+
+
 body {
-    background-image:url('/static/background.jpg');
-    background-size:100%;
     background-repeat: no-repeat;
-    font-family: 微软雅黑细体
+    font-family: 微软雅黑细体;
 }
 
 #content {

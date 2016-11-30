@@ -42,7 +42,7 @@ function check(form) {
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?539aa99cfa5ca24e443407dcce893eed";
+  hm.src = "https://hm.baidu.com/hm.js?8a4fd4d23c7fa2c6d6573f74b27b8cbd";
   var s = document.getElementsByTagName("script")[0]; 
   s.parentNode.insertBefore(hm, s);
 })();
