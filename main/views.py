@@ -13,7 +13,10 @@ def index(request):
 
 
 def get_url(request, Surl=None):
-    Lurl = Url_c.S2L_url(Surl)
+    try:
+        Lurl = Url_c.S2L_url(Surl)
+    except Exception as e:
+        return HttpResponseRedirect('/')
     return HttpResponseRedirect(Lurl)
 
 
