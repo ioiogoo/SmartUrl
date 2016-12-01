@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+from config import *
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'ywgxnwipbnuq5gs*)n^0h9)*-4ooq+-pr4-2x426y-v-y!p)_k'
+SECRET_KEY = SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -74,16 +75,7 @@ WSGI_APPLICATION = 'smarturl.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        # 'OPTIONS': {'read_default_file': os.path.join(BASE_DIR, 'mysql.conf'),}
-        'NAME': 'smarturl',
-        'USER': 'root',
-        'PASSWORD': 'qwer',
-    }
-}
-
+DATABASES = DATABASES
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
