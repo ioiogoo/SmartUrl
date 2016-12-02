@@ -25,9 +25,9 @@ class Url_c(object):
             # insert Surl
             url.Surl = Surl
             url.save()
-            return Surl
+            return Surl,url.Views
         except:
-            return Url.objects.filter(Lurl=Lurl)[0].Surl
+            return Url.objects.filter(Lurl=Lurl)[0].Surl, Url.objects.filter(Lurl=Lurl)[0].Views
 
     @classmethod
     def S2L_url(cls, Surl=None):
