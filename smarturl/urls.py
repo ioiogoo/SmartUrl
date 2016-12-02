@@ -29,4 +29,4 @@ urlpatterns = [
 if not settings.DEBUG:
     urlpatterns += [url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT})]
 
-urlpatterns += [url(r'^([\w/]+)', get_url)]
+# urlpatterns += [url(r'^([\w/]+)', get_url)]
